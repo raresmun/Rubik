@@ -1,0 +1,354 @@
+[
+  {
+    "key": "welcome",
+    "text": "Salut, Erik! Învățăm împreună, pas cu pas."
+  },
+  {
+    "key": "voice-test",
+    "text": "Bună, Erik! Aceasta este vocea ta de antrenament. Privim, înțelegem și încercăm împreună."
+  },
+  {
+    "key": "practice",
+    "text": "Acum încearcă tu. Cubul revine la poziția de început. Poți reuși și cu alte mișcări corecte."
+  },
+  {
+    "key": "success",
+    "text": "Ai reușit! Ai înțeles ideea și ai găsit drumul. Bravo, Erik!"
+  },
+  {
+    "key": "slower-is-ok",
+    "text": "O tehnică nouă poate fi mai lentă la început. Este normal. Înțelegerea vine înaintea vitezei."
+  },
+  {
+    "key": "physical-orientation",
+    "text": "Pornește cu un cub rezolvat. Ține centrul galben sus și centrul verde spre tine. Apasă Am făcut după fiecare mișcare."
+  },
+  {
+    "key": "physical-recovery",
+    "text": "Dacă nu mai știi poziția cubului, rezolvă-l cu metoda ta. Apoi refacem pregătirea, pas cu pas."
+  },
+  {
+    "key": "move-U",
+    "text": "Rotește fața sus un sfert de tură în sensul acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-U-prime",
+    "text": "Rotește fața sus un sfert de tură în sens invers acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-U2",
+    "text": "Rotește fața sus o jumătate de tură, privind direct acea față."
+  },
+  {
+    "key": "move-R",
+    "text": "Rotește fața dreapta un sfert de tură în sensul acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-R-prime",
+    "text": "Rotește fața dreapta un sfert de tură în sens invers acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-R2",
+    "text": "Rotește fața dreapta o jumătate de tură, privind direct acea față."
+  },
+  {
+    "key": "move-F",
+    "text": "Rotește fața față un sfert de tură în sensul acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-F-prime",
+    "text": "Rotește fața față un sfert de tură în sens invers acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-F2",
+    "text": "Rotește fața față o jumătate de tură, privind direct acea față."
+  },
+  {
+    "key": "move-D",
+    "text": "Rotește fața jos un sfert de tură în sensul acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-D-prime",
+    "text": "Rotește fața jos un sfert de tură în sens invers acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-D2",
+    "text": "Rotește fața jos o jumătate de tură, privind direct acea față."
+  },
+  {
+    "key": "move-L",
+    "text": "Rotește fața stânga un sfert de tură în sensul acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-L-prime",
+    "text": "Rotește fața stânga un sfert de tură în sens invers acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-L2",
+    "text": "Rotește fața stânga o jumătate de tură, privind direct acea față."
+  },
+  {
+    "key": "move-B",
+    "text": "Rotește fața spate un sfert de tură în sensul acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-B-prime",
+    "text": "Rotește fața spate un sfert de tură în sens invers acelor de ceasornic, privind direct acea față."
+  },
+  {
+    "key": "move-B2",
+    "text": "Rotește fața spate o jumătate de tură, privind direct acea față."
+  },
+  {
+    "key": "orientare",
+    "text": "Ține galbenul sus și verdele spre tine. Centrele arată unde trebuie să ajungă fiecare culoare. În modul Privește, miști doar camera. Ca să rezolvi, rotești o față. Acum întoarce fața de sus până când culorile se potrivesc din nou."
+  },
+  {
+    "key": "orientare-hint",
+    "text": "Fața de sus se numește U. Privește-o de sus: un sfert de tură în sensul ceasului repară poziția."
+  },
+  {
+    "key": "orientare-notice",
+    "text": "Știi deja asta? Poți alege direct prima lecție F2L."
+  },
+  {
+    "key": "notatie",
+    "text": "R înseamnă dreapta. R cu apostrof întoarce dreapta în sens invers. R doi înseamnă o jumătate de tură. Sensul se vede privind direct fața pe care o rotești. Încearcă două sferturi de tură sau o singură jumătate de tură."
+  },
+  {
+    "key": "notatie-hint",
+    "text": "Fața roșie este în dreapta. Două apăsări în același sens fac aceeași mișcare ca R2."
+  },
+  {
+    "key": "notatie-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "f2l-pereche",
+    "text": "Uite colțul alb, verde și roșu și muchia verde cu roșu. Sunt deja împreună, sus. Le punem în locul dintre centrele verde și roșu. Deschidem dreapta, aducem perechea deasupra locului ei și închidem. Crucea albă rămâne întreagă."
+  },
+  {
+    "key": "f2l-pereche-hint",
+    "text": "Perechea este sus, spre față și stânga. Urmărește cele două abțibilduri verzi: merg împreună."
+  },
+  {
+    "key": "f2l-pereche-notice",
+    "text": "Când înveți ceva nou, poți fi puțin mai lent. E în regulă: întâi înțelegi, apoi prinzi viteză."
+  },
+  {
+    "key": "f2l-separate",
+    "text": "Acum colțul alb, verde și roșu este sus, în față-dreapta. Muchia lui este sus, în spate. Culorile verzi privesc în sus. Deschidem locul din dreapta, apropiem piesele cu partea de sus și închidem. Observă cum ajung împreună în locul potrivit."
+  },
+  {
+    "key": "f2l-separate-hint",
+    "text": "Nu rezolva doar colțul. Caută și muchia cu aceleași două culori: verde și roșu."
+  },
+  {
+    "key": "f2l-separate-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "f2l-colt-prins",
+    "text": "Colțul potrivit este în locul din față-dreapta, dar este răsucit. Muchia verde cu roșu îl așteaptă sus. Scoatem colțul fără să stricăm celelalte perechi. Potrivim piesele sus, apoi le punem împreună la loc."
+  },
+  {
+    "key": "f2l-colt-prins-hint",
+    "text": "Privește abțibildul alb al colțului. Nu este încă spre podea. Mai întâi trebuie să scoatem colțul."
+  },
+  {
+    "key": "f2l-colt-prins-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "f2l-alb-sus",
+    "text": "Colțul are albul în sus. Muchia verde cu roșu este lângă el, dar cele două piese nu formează încă perechea corectă. Le despărțim puțin, întoarcem colțul prin deschiderea locului și le reunim. Urmărește piesele, nu încerca să memorezi tot dintr-o dată."
+  },
+  {
+    "key": "f2l-alb-sus-hint",
+    "text": "Lângă nu înseamnă mereu potrivit. Compară verdele de pe colț cu verdele de pe muchie."
+  },
+  {
+    "key": "f2l-alb-sus-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "f2l-stanga",
+    "text": "Căutăm acum colțul alb, verde și portocaliu și muchia verde cu portocaliu. Perechea lor intră între centrele verde și portocaliu. Deschidem stânga, aducem perechea și închidem. Aceeași idee te ajută în toate cele patru locuri."
+  },
+  {
+    "key": "f2l-stanga-hint",
+    "text": "Perechea este sus, în față-dreapta. Destinația ei este jos, în față-stânga."
+  },
+  {
+    "key": "f2l-stanga-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "cruce-priveste",
+    "text": "Crucea albă se construiește jos. Caută muchia alb cu verde. Mai întâi imaginează-ți drumul ei până lângă centrul alb. O jumătate de tură a feței verzi o duce la loc. Verifică și culorile de pe laterale: trebuie să se potrivească cu centrele."
+  },
+  {
+    "key": "cruce-priveste-hint",
+    "text": "Muchia alb cu verde este sus, în față. Nu este suficient ca toate alburile să fie jos: și verdele trebuie să fie lângă centrul verde."
+  },
+  {
+    "key": "cruce-priveste-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "cruce-plan",
+    "text": "Privește cele patru muchii albe înainte de prima mișcare. În această poziție folosim fața verde, apoi dreapta, apoi aliniem partea de jos. Încearcă să urmărești în minte unde ajunge fiecare muchie. Nu pornim cronometrul: exersăm planul."
+  },
+  {
+    "key": "cruce-plan-hint",
+    "text": "Planul acestei poziții este: fața verde jumătate de tură, dreapta jumătate de tură, apoi jos în sens invers."
+  },
+  {
+    "key": "cruce-plan-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "oll-linie",
+    "text": "Primele două straturi sunt gata. Pe galben vezi o linie de la stânga la dreapta. Ține linia așa. Deschidem fața verde, facem mișcările din dreapta și de sus, apoi închidem verdele. Scopul este crucea galbenă. Colțurile pot încă să fie răsucite."
+  },
+  {
+    "key": "oll-linie-hint",
+    "text": "Uită-te numai la cele patru muchii galbene. Linia trebuie să treacă prin centrul galben, de la stânga la dreapta."
+  },
+  {
+    "key": "oll-linie-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "oll-l",
+    "text": "Acum cele două muchii galbene formează un L în spate și în stânga. Ține verdele în față. Acest șir scurt de mișcări orientează celelalte două muchii. Primele două straturi trebuie să rămână rezolvate."
+  },
+  {
+    "key": "oll-l-hint",
+    "text": "Cele două brațe galbene sunt spre spate și spre stânga. Colțurile nu decid dacă avem cruce."
+  },
+  {
+    "key": "oll-l-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "oll-sune",
+    "text": "Crucea galbenă este gata. Un singur colț are galbenul în sus, în față-stânga. Acest caz se numește Sune. Urmărește ritmul: deschide, mută sus, închide; mută sus; deschide, mută sus de două ori, închide. La sfârșit, toată fața de sus devine galbenă."
+  },
+  {
+    "key": "oll-sune-hint",
+    "text": "Ține colțul cu galben în sus în față-stânga. Dacă poziția ta s-a schimbat, folosește Înapoi sau refă exercițiul."
+  },
+  {
+    "key": "oll-sune-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "oll-antisune",
+    "text": "Acesta seamănă cu Sune, dar colțurile sunt răsucite în celălalt sens. Colțul galben orientat este în spate-dreapta. Începem cu dreapta și o jumătate de tură sus. Observă diferența înainte să rotești. Fața galbenă se termină fără să stricăm straturile de jos."
+  },
+  {
+    "key": "oll-antisune-hint",
+    "text": "Nu alege algoritmul doar fiindcă vezi un peștișor. Verifică unde este colțul galben și în ce direcție privesc celelalte abțibilduri galbene."
+  },
+  {
+    "key": "oll-antisune-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "pll-colturi",
+    "text": "Galbenul este gata, dar piesele de pe margine nu sunt la loc. În această poziție, cele două colțuri din dreapta trebuie schimbate. Cazul T le schimbă și mută două muchii. Urmărește bucățelele scurte ale demonstrației. După colțuri, vom verifica muchiile."
+  },
+  {
+    "key": "pll-colturi-hint",
+    "text": "Pe partea stângă, cele două colțuri de sus au aceeași culoare. Ține această pereche în stânga."
+  },
+  {
+    "key": "pll-colturi-notice",
+    "text": "Acesta este un caz din PLL. Îl învățăm separat; nu este nevoie să memorezi toate cazurile acum."
+  },
+  {
+    "key": "pll-ua",
+    "text": "Colțurile sunt gata. Muchia de sus din spate este deja corectă. Celelalte trei muchii își schimbă locurile în cerc. Ține verdele spre tine și urmărește muchiile, nu colțurile. După acest pas, toate culorile se potrivesc."
+  },
+  {
+    "key": "pll-ua-hint",
+    "text": "Fața albastră din spate este completă. Las-o în spate în timp ce exersezi acest caz."
+  },
+  {
+    "key": "pll-ua-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "pll-ub",
+    "text": "Și acum sunt trei muchii de mutat, dar cercul merge în celălalt sens. Muchia albastră din spate rămâne corectă. Compară cele două cazuri înainte de prima mișcare. Nu trebuie să grăbești mâinile: recunoașterea te ajută mult."
+  },
+  {
+    "key": "pll-ub-hint",
+    "text": "Uită-te la muchia de sus din față: are portocaliu spre tine. În cazul precedent avea roșu."
+  },
+  {
+    "key": "pll-ub-notice",
+    "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările."
+  },
+  {
+    "key": "lookahead",
+    "text": "Rezolvăm două perechi. Întâi pe cea alb, verde și roșu. În timp ce o pui la loc, încearcă să observi colțul alb, verde și portocaliu. Fă o pauză dacă ai nevoie. Scopul este să știi ce cauți după aceea, nu să rotești mai repede."
+  },
+  {
+    "key": "lookahead-hint",
+    "text": "Prima pereche intră în față-dreapta. A doua intră în față-stânga. Păstrează verdele spre tine."
+  },
+  {
+    "key": "lookahead-notice",
+    "text": "Pauzele sunt normale. Viteza vine din înțelegere și mișcări confortabile."
+  },
+  {
+    "key": "rezolvare-ghidata",
+    "text": "Rezolvăm împreună un cub pregătit pentru antrenament. Trecem prin cruce, patru perechi, fața galbenă și ultimele piese. Fiecare etapă are un scop. Poți lua o pauză oricând; păstrăm locul unde ai ajuns."
+  },
+  {
+    "key": "rezolvare-ghidata-step-0",
+    "text": "Începem cu un plan scurt: verde de două ori, dreapta de două ori, apoi jos invers. Verificăm cele patru muchii albe și culorile lor de lângă centre."
+  },
+  {
+    "key": "rezolvare-ghidata-step-1",
+    "text": "Găsește colțul alb, verde și roșu și muchia verde cu roșu. Le introducem în față-dreapta. Crucea trebuie să rămână corectă."
+  },
+  {
+    "key": "rezolvare-ghidata-step-2",
+    "text": "Acum urmărim alb, verde și portocaliu. Perechea intră în față-stânga. La sfârșit, ambele perechi din față și crucea sunt la loc."
+  },
+  {
+    "key": "rezolvare-ghidata-step-3",
+    "text": "Găsește piesele cu alb, albastru și roșu. Intră în spate-dreapta. Poți folosi Privește ca să le vezi, apoi revino la vederea cu verde în față."
+  },
+  {
+    "key": "rezolvare-ghidata-step-4",
+    "text": "Mai avem perechea alb, albastru și portocaliu, în spate-stânga. O punem la loc. Acum primele două straturi sunt rezolvate."
+  },
+  {
+    "key": "rezolvare-ghidata-step-5",
+    "text": "Sus avem o linie galbenă de la stânga la dreapta. Folosim cazul cu linie pentru a face crucea. Păstrăm toate perechile de jos."
+  },
+  {
+    "key": "rezolvare-ghidata-step-6",
+    "text": "A apărut cazul Sune. Colțul orientat este în față-stânga. Rotim colțurile până când toată fața de sus este galbenă."
+  },
+  {
+    "key": "rezolvare-ghidata-step-7",
+    "text": "Galbenul rămâne sus. Folosim cazul T ca să punem colțurile la loc. Nu ne îngrijorăm încă pentru cele trei muchii care mai rămân."
+  },
+  {
+    "key": "rezolvare-ghidata-step-8",
+    "text": "Muchia albastră din spate este corectă. Cazul Ua mută celelalte trei muchii. Verifică fiecare față. Ai legat toate etapele unei rezolvări CFOP!"
+  },
+  {
+    "key": "rezolvare-ghidata-hint",
+    "text": "Lucrează la scopul etapei curente. Dacă faci alte mișcări, verificăm poziția reală înainte să oferim ajutor."
+  },
+  {
+    "key": "rezolvare-ghidata-notice",
+    "text": "Aceasta este o rezolvare pregătită pentru învățare. Alte amestecuri pot avea alte cazuri și alte soluții."
+  }
+]

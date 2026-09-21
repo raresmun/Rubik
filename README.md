@@ -1,29 +1,62 @@
 # Cubul lui Erik
 
-A Romanian-language Rubik’s Cube learning app for Android phones and tablets.
+Romanian 3×3 cube learning PWA for Erik: interactive 3D solving, a verified starter CFOP course, and guided physical-cube practice.
 
-## Project status
+## Run
 
-This repository currently contains the product brief and implementation prompt. The app has not been implemented yet.
+```sh
+npm ci
+npm run dev
+npm test
+npm run build
+npm run preview
+```
 
-## Planned experience
+Node 22+ is recommended. Production output is `dist/`. No environment variables, account, database server, or live AI service are required.
 
-- **Învață cu mine:** spoken Romanian tutorials with accurate 3D demonstrations, hands-on practice, and feedback.
-- **Rezolvă singur:** solve a complete interactive cube with touch controls, undo, and hints based on the current cube state.
-- **Cu cubul meu:** follow lessons with a physical cube, with explicit setup and recovery guidance.
-- A polished, child-friendly interface designed for both phone and tablet.
-- Automatic local progress saving, resumable solves, and downloadable offline lessons and audio.
+## Implemented
 
-## Implementation brief
+- **Învață cu mine:** 18 lessons, including optional notation, five F2L situations, cross planning, starter two-look OLL/PLL, lookahead, and a complete nine-stage guided CFOP solve. Demonstrations are separate from practice. Goals inspect cube state and accept alternative solutions.
+- **Rezolvă singur:** legal 20-move scrambles, a three-move practice option, touch face turns, large button alternatives, separate camera orbit, undo/redo, verified live-state solver hints in a worker, optional timer, and real solved-state detection.
+- **Cu cubul meu:** solved-cube setup, fixed holding orientation, explicit move confirmation, inverse-move undo instructions, and recovery without pretending to observe a physical cube.
+- **Romanian narration:** 88 bundled MP3 clips (approximately 12.2 minutes, 5.14 MB), subtitles, replay, mute and slower playback. A detected Romanian device voice is a fallback only. See [audio documentation](docs/AUDIO.md).
+- **Local progress:** versioned IndexedDB, exact move history and redo restoration, independent/assisted attempts, separate physical/virtual records, and validated parent-gated JSON backup/import.
+- **Offline/PWA:** generated service worker caches code, solver worker, fonts, icons, lessons and audio. Updates wait until explicitly accepted in the parent area. Local progress is never stored in the service-worker cache.
+- Responsive layouts with iOS safe areas, touch handling, reduced motion, WebGL fallback, and platform-specific installation instructions.
 
-Read [APP_PROMPT.md](./APP_PROMPT.md) for the complete requirements, curriculum, visual direction, architecture, and acceptance checks.
+## Architecture
 
-To begin with a coding assistant:
+| Area | Files |
+| --- | --- |
+| Cube engine and validation | `src/cube/engine.ts` |
+| Kociemba solver worker | `src/cube/solver.ts`, `solver.worker.ts` |
+| Three.js geometry and interaction | `src/components/CubeScene.tsx`, `src/cube/geometry.ts` |
+| Original Romanian curriculum | `src/content/lessons.ts` |
+| Audio player and offline clips | `src/lib/audio.ts`, `public/audio/` |
+| IndexedDB and backup validation | `src/lib/storage.ts` |
+| Interaction transitions | `src/lib/interaction.ts` |
+| PWA lifecycle | `src/lib/offline.ts`, `vite.config.ts` |
+| Screens and design | `src/App.tsx`, `src/styles.css` |
 
-> Read APP_PROMPT.md and implement the application described there. Follow its requirements for interactive solving, Romanian instruction, visual quality, offline support, and verification. Report any missing assets or capabilities honestly.
+cubejs 1.3.2 provides cubie mechanics and Kociemba solving. It is a stable older library, not presented as a newly maintained dependency. The renderer is independently checked against its facelet transformations and known fixtures. General solver assistance is explicitly labeled as move assistance, not invented CFOP coaching.
 
-## Proposed stack
+## Installation
 
-React, TypeScript, Vite, Tailwind, a verified cube-state/rendering library, and IndexedDB in an installable PWA. Confirm library APIs and suitability during implementation.
+- **Android / Chrome:** open the HTTPS application, use **⋮ → Install app / Add to Home screen**.
+- **iPhone / iPad / Safari:** open the HTTPS application, use **Share → Add to Home Screen**, enabling **Open as Web App** if shown.
+- **Desktop Chrome / Edge:** use the install icon in the address bar, or simply use the browser.
+- Open **Pentru părinți → Verifică pachetul offline** while online before travelling. Cache availability is checked against every included audio file and required app resources. Browsers can evict storage; an exported backup is recommended.
 
-Supabase is not required for the initial version. Progress is stored on each device, with backup/import for manual transfer; automatic cross-device sync can be added later.
+Progress is local to each browser/install. It does **not** automatically sync between devices. Installed iOS web apps can have storage separate from Safari. Export/import progress as needed. The parent gate is a simple arithmetic confirmation, not authentication or encryption.
+
+## Vercel
+
+`vercel.json` specifies the Vite build, `dist/` output, SPA navigation rewrites and service-worker headers. Import `raresmun/Rubik` into the authorized Vercel account using the repository root. No secrets are required. Use a public production deployment so the child does not need a Vercel login. Confirm HTTPS, all audio/assets, `/lessons` reload, service-worker registration, and offline launch after deployment.
+
+See [verification report](docs/TESTING.md) for what has actually been tested and what remains unverified. Do not interpret responsive CSS or simulated DOM tests as real Android/iOS device verification.
+
+## Curriculum and assets
+
+[Curriculum and primary sources](docs/CURRICULUM.md) · [Audio generation and attribution](docs/AUDIO.md) · [Original detailed brief](APP_PROMPT.md)
+
+All interface text and lesson explanations are original Romanian copy. No third-party teaching videos or copyrighted instructional illustrations are bundled. Full PLL/OLL catalogs and finger-position illustrations are future course expansions, clearly labeled in the app; ZBLL is outside the starter course.

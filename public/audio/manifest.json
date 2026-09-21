@@ -1,0 +1,623 @@
+{
+  "version": 1,
+  "voice": "Piper ro_RO-mihai-medium",
+  "language": "ro-RO",
+  "files": [
+    {
+      "key": "welcome",
+      "text": "Salut, Erik! Învățăm împreună, pas cu pas.",
+      "src": "/audio/welcome-e1700fe28ec2.mp3",
+      "duration": 2.978,
+      "bytes": 21072
+    },
+    {
+      "key": "voice-test",
+      "text": "Bună, Erik! Aceasta este vocea ta de antrenament. Privim, înțelegem și încercăm împreună.",
+      "src": "/audio/voice-test-27b214fdf61a.mp3",
+      "duration": 5.799,
+      "bytes": 40821
+    },
+    {
+      "key": "practice",
+      "text": "Acum încearcă tu. Cubul revine la poziția de început. Poți reuși și cu alte mișcări corecte.",
+      "src": "/audio/practice-5aa1bb9b19d9.mp3",
+      "duration": 6.139,
+      "bytes": 43198
+    },
+    {
+      "key": "success",
+      "text": "Ai reușit! Ai înțeles ideea și ai găsit drumul. Bravo, Erik!",
+      "src": "/audio/success-5cf6f855ec88.mp3",
+      "duration": 3.866,
+      "bytes": 27289
+    },
+    {
+      "key": "slower-is-ok",
+      "text": "O tehnică nouă poate fi mai lentă la început. Este normal. Înțelegerea vine înaintea vitezei.",
+      "src": "/audio/slower-is-ok-5be35c681f51.mp3",
+      "duration": 6.243,
+      "bytes": 43929
+    },
+    {
+      "key": "physical-orientation",
+      "text": "Pornește cu un cub rezolvat. Ține centrul galben sus și centrul verde spre tine. Apasă Am făcut după fiecare mișcare.",
+      "src": "/audio/physical-orientation-575b1a2fa516.mp3",
+      "duration": 8.202,
+      "bytes": 57644
+    },
+    {
+      "key": "physical-recovery",
+      "text": "Dacă nu mai știi poziția cubului, rezolvă-l cu metoda ta. Apoi refacem pregătirea, pas cu pas.",
+      "src": "/audio/physical-recovery-1f47c1885624.mp3",
+      "duration": 6.504,
+      "bytes": 45758
+    },
+    {
+      "key": "move-U",
+      "text": "Rotește fața sus un sfert de tură în sensul acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-U-27a9e1cf70e6.mp3",
+      "duration": 6.635,
+      "bytes": 46672
+    },
+    {
+      "key": "move-U-prime",
+      "text": "Rotește fața sus un sfert de tură în sens invers acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-U-prime-42ddf78ed2f9.mp3",
+      "duration": 6.844,
+      "bytes": 48135
+    },
+    {
+      "key": "move-U2",
+      "text": "Rotește fața sus o jumătate de tură, privind direct acea față.",
+      "src": "/audio/move-U2-cfc00ba4e2bc.mp3",
+      "duration": 4.598,
+      "bytes": 32409
+    },
+    {
+      "key": "move-R",
+      "text": "Rotește fața dreapta un sfert de tură în sensul acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-R-7fd460e9681d.mp3",
+      "duration": 6.687,
+      "bytes": 47038
+    },
+    {
+      "key": "move-R-prime",
+      "text": "Rotește fața dreapta un sfert de tură în sens invers acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-R-prime-2ea1154d8ab2.mp3",
+      "duration": 7.027,
+      "bytes": 49415
+    },
+    {
+      "key": "move-R2",
+      "text": "Rotește fața dreapta o jumătate de tură, privind direct acea față.",
+      "src": "/audio/move-R2-f688e77672de.mp3",
+      "duration": 4.598,
+      "bytes": 32409
+    },
+    {
+      "key": "move-F",
+      "text": "Rotește fața față un sfert de tură în sensul acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-F-114baa5b2366.mp3",
+      "duration": 6.504,
+      "bytes": 45758
+    },
+    {
+      "key": "move-F-prime",
+      "text": "Rotește fața față un sfert de tură în sens invers acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-F-prime-86a791b92826.mp3",
+      "duration": 6.87,
+      "bytes": 48318
+    },
+    {
+      "key": "move-F2",
+      "text": "Rotește fața față o jumătate de tură, privind direct acea față.",
+      "src": "/audio/move-F2-9d9df9b0ae82.mp3",
+      "duration": 4.624,
+      "bytes": 32592
+    },
+    {
+      "key": "move-D",
+      "text": "Rotește fața jos un sfert de tură în sensul acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-D-0f1dcb9ce3a0.mp3",
+      "duration": 6.844,
+      "bytes": 48135
+    },
+    {
+      "key": "move-D-prime",
+      "text": "Rotește fața jos un sfert de tură în sens invers acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-D-prime-b532e2663324.mp3",
+      "duration": 7.314,
+      "bytes": 51427
+    },
+    {
+      "key": "move-D2",
+      "text": "Rotește fața jos o jumătate de tură, privind direct acea față.",
+      "src": "/audio/move-D2-c4fc59063549.mp3",
+      "duration": 4.493,
+      "bytes": 31678
+    },
+    {
+      "key": "move-L",
+      "text": "Rotește fața stânga un sfert de tură în sensul acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-L-16b136497109.mp3",
+      "duration": 6.975,
+      "bytes": 49049
+    },
+    {
+      "key": "move-L-prime",
+      "text": "Rotește fața stânga un sfert de tură în sens invers acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-L-prime-36b91fcbcb6c.mp3",
+      "duration": 7.367,
+      "bytes": 51792
+    },
+    {
+      "key": "move-L2",
+      "text": "Rotește fața stânga o jumătate de tură, privind direct acea față.",
+      "src": "/audio/move-L2-1be8e7a4385b.mp3",
+      "duration": 4.78,
+      "bytes": 33689
+    },
+    {
+      "key": "move-B",
+      "text": "Rotește fața spate un sfert de tură în sensul acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-B-a2fe79a74d80.mp3",
+      "duration": 6.609,
+      "bytes": 46489
+    },
+    {
+      "key": "move-B-prime",
+      "text": "Rotește fața spate un sfert de tură în sens invers acelor de ceasornic, privind direct acea față.",
+      "src": "/audio/move-B-prime-ffb2893982cf.mp3",
+      "duration": 7.158,
+      "bytes": 50329
+    },
+    {
+      "key": "move-B2",
+      "text": "Rotește fața spate o jumătate de tură, privind direct acea față.",
+      "src": "/audio/move-B2-e7436a3cb639.mp3",
+      "duration": 4.702,
+      "bytes": 33141
+    },
+    {
+      "key": "orientare",
+      "text": "Ține galbenul sus și verdele spre tine. Centrele arată unde trebuie să ajungă fiecare culoare. În modul Privește, miști doar camera. Ca să rezolvi, rotești o față. Acum întoarce fața de sus până când culorile se potrivesc din nou.",
+      "src": "/audio/orientare-fbc176aceeb1.mp3",
+      "duration": 15.595,
+      "bytes": 109392
+    },
+    {
+      "key": "orientare-hint",
+      "text": "Fața de sus se numește U. Privește-o de sus: un sfert de tură în sensul ceasului repară poziția.",
+      "src": "/audio/orientare-hint-53bae033948f.mp3",
+      "duration": 7.131,
+      "bytes": 50147
+    },
+    {
+      "key": "orientare-notice",
+      "text": "Știi deja asta? Poți alege direct prima lecție F2L.",
+      "src": "/audio/orientare-notice-5bfda62fa800.mp3",
+      "duration": 4.336,
+      "bytes": 30581
+    },
+    {
+      "key": "notatie",
+      "text": "R înseamnă dreapta. R cu apostrof întoarce dreapta în sens invers. R doi înseamnă o jumătate de tură. Sensul se vede privind direct fața pe care o rotești. Încearcă două sferturi de tură sau o singură jumătate de tură.",
+      "src": "/audio/notatie-167cc1b29635.mp3",
+      "duration": 14.472,
+      "bytes": 101529
+    },
+    {
+      "key": "notatie-hint",
+      "text": "Fața roșie este în dreapta. Două apăsări în același sens fac aceeași mișcare ca R2.",
+      "src": "/audio/notatie-hint-696beccd031e.mp3",
+      "duration": 6.165,
+      "bytes": 43381
+    },
+    {
+      "key": "notatie-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/notatie-notice-88aa86ab5dbf.mp3",
+      "duration": 5.355,
+      "bytes": 37712
+    },
+    {
+      "key": "f2l-pereche",
+      "text": "Uite colțul alb, verde și roșu și muchia verde cu roșu. Sunt deja împreună, sus. Le punem în locul dintre centrele verde și roșu. Deschidem dreapta, aducem perechea deasupra locului ei și închidem. Crucea albă rămâne întreagă.",
+      "src": "/audio/f2l-pereche-505b3285ee49.mp3",
+      "duration": 14.942,
+      "bytes": 104821
+    },
+    {
+      "key": "f2l-pereche-hint",
+      "text": "Perechea este sus, spre față și stânga. Urmărește cele două abțibilduri verzi: merg împreună.",
+      "src": "/audio/f2l-pereche-hint-1e74ce251a91.mp3",
+      "duration": 6.504,
+      "bytes": 45758
+    },
+    {
+      "key": "f2l-pereche-notice",
+      "text": "Când înveți ceva nou, poți fi puțin mai lent. E în regulă: întâi înțelegi, apoi prinzi viteză.",
+      "src": "/audio/f2l-pereche-notice-6992d5b185de.mp3",
+      "duration": 6.74,
+      "bytes": 47404
+    },
+    {
+      "key": "f2l-separate",
+      "text": "Acum colțul alb, verde și roșu este sus, în față-dreapta. Muchia lui este sus, în spate. Culorile verzi privesc în sus. Deschidem locul din dreapta, apropiem piesele cu partea de sus și închidem. Observă cum ajung împreună în locul potrivit.",
+      "src": "/audio/f2l-separate-f5999d1b1188.mp3",
+      "duration": 17.058,
+      "bytes": 119632
+    },
+    {
+      "key": "f2l-separate-hint",
+      "text": "Nu rezolva doar colțul. Caută și muchia cu aceleași două culori: verde și roșu.",
+      "src": "/audio/f2l-separate-hint-0dc78a031398.mp3",
+      "duration": 5.695,
+      "bytes": 40089
+    },
+    {
+      "key": "f2l-separate-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/f2l-separate-notice-88aa86ab5dbf.mp3",
+      "duration": 5.355,
+      "bytes": 37712
+    },
+    {
+      "key": "f2l-colt-prins",
+      "text": "Colțul potrivit este în locul din față-dreapta, dar este răsucit. Muchia verde cu roșu îl așteaptă sus. Scoatem colțul fără să stricăm celelalte perechi. Potrivim piesele sus, apoi le punem împreună la loc.",
+      "src": "/audio/f2l-colt-prins-3d1995c16f5d.mp3",
+      "duration": 13.009,
+      "bytes": 91289
+    },
+    {
+      "key": "f2l-colt-prins-hint",
+      "text": "Privește abțibildul alb al colțului. Nu este încă spre podea. Mai întâi trebuie să scoatem colțul.",
+      "src": "/audio/f2l-colt-prins-hint-578f4753ec25.mp3",
+      "duration": 6.478,
+      "bytes": 45575
+    },
+    {
+      "key": "f2l-colt-prins-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/f2l-colt-prins-notice-88aa86ab5dbf.mp3",
+      "duration": 5.277,
+      "bytes": 37164
+    },
+    {
+      "key": "f2l-alb-sus",
+      "text": "Colțul are albul în sus. Muchia verde cu roșu este lângă el, dar cele două piese nu formează încă perechea corectă. Le despărțim puțin, întoarcem colțul prin deschiderea locului și le reunim. Urmărește piesele, nu încerca să memorezi tot dintr-o dată.",
+      "src": "/audio/f2l-alb-sus-7b0493bba47a.mp3",
+      "duration": 16.248,
+      "bytes": 113964
+    },
+    {
+      "key": "f2l-alb-sus-hint",
+      "text": "Lângă nu înseamnă mereu potrivit. Compară verdele de pe colț cu verdele de pe muchie.",
+      "src": "/audio/f2l-alb-sus-hint-ee16aa1827d6.mp3",
+      "duration": 5.172,
+      "bytes": 36432
+    },
+    {
+      "key": "f2l-alb-sus-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/f2l-alb-sus-notice-88aa86ab5dbf.mp3",
+      "duration": 5.251,
+      "bytes": 36981
+    },
+    {
+      "key": "f2l-stanga",
+      "text": "Căutăm acum colțul alb, verde și portocaliu și muchia verde cu portocaliu. Perechea lor intră între centrele verde și portocaliu. Deschidem stânga, aducem perechea și închidem. Aceeași idee te ajută în toate cele patru locuri.",
+      "src": "/audio/f2l-stanga-2cda1d42cb55.mp3",
+      "duration": 15.073,
+      "bytes": 105735
+    },
+    {
+      "key": "f2l-stanga-hint",
+      "text": "Perechea este sus, în față-dreapta. Destinația ei este jos, în față-stânga.",
+      "src": "/audio/f2l-stanga-hint-05c8fe264c7c.mp3",
+      "duration": 5.277,
+      "bytes": 37164
+    },
+    {
+      "key": "f2l-stanga-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/f2l-stanga-notice-88aa86ab5dbf.mp3",
+      "duration": 5.303,
+      "bytes": 37347
+    },
+    {
+      "key": "cruce-priveste",
+      "text": "Crucea albă se construiește jos. Caută muchia alb cu verde. Mai întâi imaginează-ți drumul ei până lângă centrul alb. O jumătate de tură a feței verzi o duce la loc. Verifică și culorile de pe laterale: trebuie să se potrivească cu centrele.",
+      "src": "/audio/cruce-priveste-70c7e8229b59.mp3",
+      "duration": 16.274,
+      "bytes": 114147
+    },
+    {
+      "key": "cruce-priveste-hint",
+      "text": "Muchia alb cu verde este sus, în față. Nu este suficient ca toate alburile să fie jos: și verdele trebuie să fie lângă centrul verde.",
+      "src": "/audio/cruce-priveste-hint-27d811d75065.mp3",
+      "duration": 9.117,
+      "bytes": 64044
+    },
+    {
+      "key": "cruce-priveste-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/cruce-priveste-notice-88aa86ab5dbf.mp3",
+      "duration": 5.172,
+      "bytes": 36432
+    },
+    {
+      "key": "cruce-plan",
+      "text": "Privește cele patru muchii albe înainte de prima mișcare. În această poziție folosim fața verde, apoi dreapta, apoi aliniem partea de jos. Încearcă să urmărești în minte unde ajunge fiecare muchie. Nu pornim cronometrul: exersăm planul.",
+      "src": "/audio/cruce-plan-44da56e236ef.mp3",
+      "duration": 15.935,
+      "bytes": 111769
+    },
+    {
+      "key": "cruce-plan-hint",
+      "text": "Planul acestei poziții este: fața verde jumătate de tură, dreapta jumătate de tură, apoi jos în sens invers.",
+      "src": "/audio/cruce-plan-hint-bb5edfa71bc5.mp3",
+      "duration": 7.993,
+      "bytes": 56181
+    },
+    {
+      "key": "cruce-plan-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/cruce-plan-notice-88aa86ab5dbf.mp3",
+      "duration": 5.277,
+      "bytes": 37164
+    },
+    {
+      "key": "oll-linie",
+      "text": "Primele două straturi sunt gata. Pe galben vezi o linie de la stânga la dreapta. Ține linia așa. Deschidem fața verde, facem mișcările din dreapta și de sus, apoi închidem verdele. Scopul este crucea galbenă. Colțurile pot încă să fie răsucite.",
+      "src": "/audio/oll-linie-f04f673bc503.mp3",
+      "duration": 16.64,
+      "bytes": 116707
+    },
+    {
+      "key": "oll-linie-hint",
+      "text": "Uită-te numai la cele patru muchii galbene. Linia trebuie să treacă prin centrul galben, de la stânga la dreapta.",
+      "src": "/audio/oll-linie-hint-2c6fe360f0d3.mp3",
+      "duration": 7.105,
+      "bytes": 49964
+    },
+    {
+      "key": "oll-linie-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/oll-linie-notice-88aa86ab5dbf.mp3",
+      "duration": 5.224,
+      "bytes": 36798
+    },
+    {
+      "key": "oll-l",
+      "text": "Acum cele două muchii galbene formează un L în spate și în stânga. Ține verdele în față. Acest șir scurt de mișcări orientează celelalte două muchii. Primele două straturi trebuie să rămână rezolvate.",
+      "src": "/audio/oll-l-b5fe1ae7cd77.mp3",
+      "duration": 13.531,
+      "bytes": 94947
+    },
+    {
+      "key": "oll-l-hint",
+      "text": "Cele două brațe galbene sunt spre spate și spre stânga. Colțurile nu decid dacă avem cruce.",
+      "src": "/audio/oll-l-hint-ee9564f51f92.mp3",
+      "duration": 6.583,
+      "bytes": 46307
+    },
+    {
+      "key": "oll-l-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/oll-l-notice-88aa86ab5dbf.mp3",
+      "duration": 5.277,
+      "bytes": 37164
+    },
+    {
+      "key": "oll-sune",
+      "text": "Crucea galbenă este gata. Un singur colț are galbenul în sus, în față-stânga. Acest caz se numește Sune. Urmărește ritmul: deschide, mută sus, închide; mută sus; deschide, mută sus de două ori, închide. La sfârșit, toată fața de sus devine galbenă.",
+      "src": "/audio/oll-sune-25745894125d.mp3",
+      "duration": 17.763,
+      "bytes": 124569
+    },
+    {
+      "key": "oll-sune-hint",
+      "text": "Ține colțul cu galben în sus în față-stânga. Dacă poziția ta s-a schimbat, folosește Înapoi sau refă exercițiul.",
+      "src": "/audio/oll-sune-hint-3854f33e5997.mp3",
+      "duration": 7.811,
+      "bytes": 54901
+    },
+    {
+      "key": "oll-sune-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/oll-sune-notice-88aa86ab5dbf.mp3",
+      "duration": 5.329,
+      "bytes": 37529
+    },
+    {
+      "key": "oll-antisune",
+      "text": "Acesta seamănă cu Sune, dar colțurile sunt răsucite în celălalt sens. Colțul galben orientat este în spate-dreapta. Începem cu dreapta și o jumătate de tură sus. Observă diferența înainte să rotești. Fața galbenă se termină fără să stricăm straturile de jos.",
+      "src": "/audio/oll-antisune-e9812543ebd5.mp3",
+      "duration": 17.45,
+      "bytes": 122375
+    },
+    {
+      "key": "oll-antisune-hint",
+      "text": "Nu alege algoritmul doar fiindcă vezi un peștișor. Verifică unde este colțul galben și în ce direcție privesc celelalte abțibilduri galbene.",
+      "src": "/audio/oll-antisune-hint-173563b49afd.mp3",
+      "duration": 9.221,
+      "bytes": 64775
+    },
+    {
+      "key": "oll-antisune-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/oll-antisune-notice-88aa86ab5dbf.mp3",
+      "duration": 5.329,
+      "bytes": 37529
+    },
+    {
+      "key": "pll-colturi",
+      "text": "Galbenul este gata, dar piesele de pe margine nu sunt la loc. În această poziție, cele două colțuri din dreapta trebuie schimbate. Cazul T le schimbă și mută două muchii. Urmărește bucățelele scurte ale demonstrației. După colțuri, vom verifica muchiile.",
+      "src": "/audio/pll-colturi-6c0b8c5b8d03.mp3",
+      "duration": 16.536,
+      "bytes": 115975
+    },
+    {
+      "key": "pll-colturi-hint",
+      "text": "Pe partea stângă, cele două colțuri de sus au aceeași culoare. Ține această pereche în stânga.",
+      "src": "/audio/pll-colturi-hint-fbda1d590a59.mp3",
+      "duration": 6.243,
+      "bytes": 43929
+    },
+    {
+      "key": "pll-colturi-notice",
+      "text": "Acesta este un caz din PLL. Îl învățăm separat; nu este nevoie să memorezi toate cazurile acum.",
+      "src": "/audio/pll-colturi-notice-95fba1e70af4.mp3",
+      "duration": 6.557,
+      "bytes": 46124
+    },
+    {
+      "key": "pll-ua",
+      "text": "Colțurile sunt gata. Muchia de sus din spate este deja corectă. Celelalte trei muchii își schimbă locurile în cerc. Ține verdele spre tine și urmărește muchiile, nu colțurile. După acest pas, toate culorile se potrivesc.",
+      "src": "/audio/pll-ua-118c94f2884d.mp3",
+      "duration": 14.811,
+      "bytes": 103907
+    },
+    {
+      "key": "pll-ua-hint",
+      "text": "Fața albastră din spate este completă. Las-o în spate în timp ce exersezi acest caz.",
+      "src": "/audio/pll-ua-hint-12f36a64f9a8.mp3",
+      "duration": 5.825,
+      "bytes": 41004
+    },
+    {
+      "key": "pll-ua-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/pll-ua-notice-88aa86ab5dbf.mp3",
+      "duration": 5.198,
+      "bytes": 36615
+    },
+    {
+      "key": "pll-ub",
+      "text": "Și acum sunt trei muchii de mutat, dar cercul merge în celălalt sens. Muchia albastră din spate rămâne corectă. Compară cele două cazuri înainte de prima mișcare. Nu trebuie să grăbești mâinile: recunoașterea te ajută mult.",
+      "src": "/audio/pll-ub-d6b26339d6b3.mp3",
+      "duration": 14.785,
+      "bytes": 103724
+    },
+    {
+      "key": "pll-ub-hint",
+      "text": "Uită-te la muchia de sus din față: are portocaliu spre tine. În cazul precedent avea roșu.",
+      "src": "/audio/pll-ub-hint-75ae4cd6bff3.mp3",
+      "duration": 6.426,
+      "bytes": 45209
+    },
+    {
+      "key": "pll-ub-notice",
+      "text": "Poți găsi și altă soluție. Verificăm piesele, nu dacă ai copiat mișcările.",
+      "src": "/audio/pll-ub-notice-88aa86ab5dbf.mp3",
+      "duration": 5.277,
+      "bytes": 37164
+    },
+    {
+      "key": "lookahead",
+      "text": "Rezolvăm două perechi. Întâi pe cea alb, verde și roșu. În timp ce o pui la loc, încearcă să observi colțul alb, verde și portocaliu. Fă o pauză dacă ai nevoie. Scopul este să știi ce cauți după aceea, nu să rotești mai repede.",
+      "src": "/audio/lookahead-d8a2b84da528.mp3",
+      "duration": 15.203,
+      "bytes": 106649
+    },
+    {
+      "key": "lookahead-hint",
+      "text": "Prima pereche intră în față-dreapta. A doua intră în față-stânga. Păstrează verdele spre tine.",
+      "src": "/audio/lookahead-hint-047114e777e3.mp3",
+      "duration": 6.348,
+      "bytes": 44661
+    },
+    {
+      "key": "lookahead-notice",
+      "text": "Pauzele sunt normale. Viteza vine din înțelegere și mișcări confortabile.",
+      "src": "/audio/lookahead-notice-80aa8c714143.mp3",
+      "duration": 5.355,
+      "bytes": 37712
+    },
+    {
+      "key": "rezolvare-ghidata",
+      "text": "Rezolvăm împreună un cub pregătit pentru antrenament. Trecem prin cruce, patru perechi, fața galbenă și ultimele piese. Fiecare etapă are un scop. Poți lua o pauză oricând; păstrăm locul unde ai ajuns.",
+      "src": "/audio/rezolvare-ghidata-b4c21ab03b2a.mp3",
+      "duration": 13.871,
+      "bytes": 97324
+    },
+    {
+      "key": "rezolvare-ghidata-step-0",
+      "text": "Începem cu un plan scurt: verde de două ori, dreapta de două ori, apoi jos invers. Verificăm cele patru muchii albe și culorile lor de lângă centre.",
+      "src": "/audio/rezolvare-ghidata-step-0-100ec18749df.mp3",
+      "duration": 10.736,
+      "bytes": 75381
+    },
+    {
+      "key": "rezolvare-ghidata-step-1",
+      "text": "Găsește colțul alb, verde și roșu și muchia verde cu roșu. Le introducem în față-dreapta. Crucea trebuie să rămână corectă.",
+      "src": "/audio/rezolvare-ghidata-step-1-9e1581ff3427.mp3",
+      "duration": 8.307,
+      "bytes": 58375
+    },
+    {
+      "key": "rezolvare-ghidata-step-2",
+      "text": "Acum urmărim alb, verde și portocaliu. Perechea intră în față-stânga. La sfârșit, ambele perechi din față și crucea sunt la loc.",
+      "src": "/audio/rezolvare-ghidata-step-2-f16b5fa01ee8.mp3",
+      "duration": 8.908,
+      "bytes": 62581
+    },
+    {
+      "key": "rezolvare-ghidata-step-3",
+      "text": "Găsește piesele cu alb, albastru și roșu. Intră în spate-dreapta. Poți folosi Privește ca să le vezi, apoi revino la vederea cu verde în față.",
+      "src": "/audio/rezolvare-ghidata-step-3-d31cf2b6ea79.mp3",
+      "duration": 10.057,
+      "bytes": 70627
+    },
+    {
+      "key": "rezolvare-ghidata-step-4",
+      "text": "Mai avem perechea alb, albastru și portocaliu, în spate-stânga. O punem la loc. Acum primele două straturi sunt rezolvate.",
+      "src": "/audio/rezolvare-ghidata-step-4-998722a56816.mp3",
+      "duration": 8.673,
+      "bytes": 60935
+    },
+    {
+      "key": "rezolvare-ghidata-step-5",
+      "text": "Sus avem o linie galbenă de la stânga la dreapta. Folosim cazul cu linie pentru a face crucea. Păstrăm toate perechile de jos.",
+      "src": "/audio/rezolvare-ghidata-step-5-0e260421ee03.mp3",
+      "duration": 8.202,
+      "bytes": 57644
+    },
+    {
+      "key": "rezolvare-ghidata-step-6",
+      "text": "A apărut cazul Sune. Colțul orientat este în față-stânga. Rotim colțurile până când toată fața de sus este galbenă.",
+      "src": "/audio/rezolvare-ghidata-step-6-9d913c116a18.mp3",
+      "duration": 7.941,
+      "bytes": 55815
+    },
+    {
+      "key": "rezolvare-ghidata-step-7",
+      "text": "Galbenul rămâne sus. Folosim cazul T ca să punem colțurile la loc. Nu ne îngrijorăm încă pentru cele trei muchii care mai rămân.",
+      "src": "/audio/rezolvare-ghidata-step-7-70b4e72ccfd3.mp3",
+      "duration": 8.229,
+      "bytes": 57827
+    },
+    {
+      "key": "rezolvare-ghidata-step-8",
+      "text": "Muchia albastră din spate este corectă. Cazul Ua mută celelalte trei muchii. Verifică fiecare față. Ai legat toate etapele unei rezolvări CFOP!",
+      "src": "/audio/rezolvare-ghidata-step-8-cb1484cfa2b9.mp3",
+      "duration": 9.587,
+      "bytes": 67335
+    },
+    {
+      "key": "rezolvare-ghidata-hint",
+      "text": "Lucrează la scopul etapei curente. Dacă faci alte mișcări, verificăm poziția reală înainte să oferim ajutor.",
+      "src": "/audio/rezolvare-ghidata-hint-cf3d7df7a87e.mp3",
+      "duration": 7.784,
+      "bytes": 54718
+    },
+    {
+      "key": "rezolvare-ghidata-notice",
+      "text": "Aceasta este o rezolvare pregătită pentru învățare. Alte amestecuri pot avea alte cazuri și alte soluții.",
+      "src": "/audio/rezolvare-ghidata-notice-7fa3f39f7187.mp3",
+      "duration": 7.314,
+      "bytes": 51427
+    }
+  ]
+}
