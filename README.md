@@ -2,6 +2,10 @@
 
 Romanian 3×3 cube learning PWA for Erik: interactive 3D solving, a verified starter CFOP course, and guided physical-cube practice.
 
+**Open the app:** [rubik-taupe.vercel.app](https://rubik-taupe.vercel.app/) — public HTTPS, no sign-in.
+
+[Verification report](docs/TESTING.md) · [Screenshots](docs/SCREENSHOTS.md)
+
 ## Run
 
 ```sh
@@ -22,7 +26,7 @@ Node 22+ is recommended. Production output is `dist/`. No environment variables,
 - **Romanian narration:** 88 bundled MP3 clips (approximately 12.2 minutes, 5.14 MB), subtitles, replay, mute and slower playback. A detected Romanian device voice is a fallback only. See [audio documentation](docs/AUDIO.md).
 - **Local progress:** versioned IndexedDB, exact move history and redo restoration, independent/assisted attempts, separate physical/virtual records, and validated parent-gated JSON backup/import.
 - **Offline/PWA:** generated service worker caches code, solver worker, fonts, icons, lessons and audio. Updates wait until explicitly accepted in the parent area. Local progress is never stored in the service-worker cache.
-- Responsive layouts with iOS safe areas, touch handling, reduced motion, WebGL fallback, and platform-specific installation instructions.
+- Responsive layouts with iOS safe areas, touch handling, reduced motion, accurate CSS3D fallback when WebGL is unavailable, and platform-specific installation instructions.
 
 ## Architecture
 
@@ -51,7 +55,7 @@ Progress is local to each browser/install. It does **not** automatically sync be
 
 ## Vercel
 
-`vercel.json` specifies the Vite build, `dist/` output, SPA navigation rewrites and service-worker headers. Import `raresmun/Rubik` into the authorized Vercel account using the repository root. No secrets are required. Use a public production deployment so the child does not need a Vercel login. Confirm HTTPS, all audio/assets, `/lessons` reload, service-worker registration, and offline launch after deployment.
+`vercel.json` specifies the Vite build, `dist/` output, SPA navigation rewrites and service-worker headers. The repository is connected to the Vercel `rubik` project; pushes to `main` trigger production deployments. No secrets are required. Use a public production deployment so the child does not need a Vercel login. Public HTTPS, production resources, nested routes, service-worker cache readiness and live practice flows have been verified. Actual device installation and airplane-mode launch still need device testing.
 
 See [verification report](docs/TESTING.md) for what has actually been tested and what remains unverified. Do not interpret responsive CSS or simulated DOM tests as real Android/iOS device verification.
 

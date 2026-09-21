@@ -135,8 +135,8 @@ describe('learning, solving, and parent workflows', () => {
     const before = cubeState();
     const historyLength = window.history.length;
     act(() => window.history.back());
+    await waitFor(() => expect(window.location.pathname).toBe('/lessons'));
     await screen.findByRole('heading', { name: 'Micile tale descoperiri.' });
-    expect(window.location.pathname).toBe('/lessons');
     await act(async () => finishNarration('ended'));
     await savedWhen(data => {
       expect(data.active?.phase).toBe('demo-paused');
@@ -144,8 +144,8 @@ describe('learning, solving, and parent workflows', () => {
       expect(data.active?.timerRunning).toBe(false);
     });
     act(() => window.history.forward());
-    await screen.findByRole('heading', { name: 'Trei semne mici' });
-    expect(window.location.pathname).toBe('/practice');
+    await waitFor(() => expect(window.location.pathname).toBe('/practice'));
+    await screen.findByRole('heading', { name: 'Trei semne mici', level: 1 });
     expect(window.history.length).toBe(historyLength);
     expect(cubeState()).toBe(before);
     expect(screen.getByRole('button', { name: 'Acum încearcă tu' })).toBeInTheDocument();
