@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {
-  FACE_COLORS, FACE_NAMES, FACE_ORDER, STICKER_POSITIONS,
+  FACE_COLORS, FACE_NAMES, FACE_NORMALS, FACE_ORDER, STICKER_POSITIONS,
   faceTurn, swipeMove, type CubeFace,
 } from '../cube/geometry';
+import './CubeFallback.css';
 
 export interface CubeSceneProps {
   state: string;
@@ -25,6 +26,111 @@ type SceneController = {
   refresh: () => void;
   resetView: () => void;
 };
+
+const CSS_FACE_ROTATIONS: Record<CubeFace, string> = {
+  U: 'rotateX(90deg)', R: 'rotateY(90deg)', F: '',
+  D: 'rotateX(-90deg)', L: 'rotateY(-90deg)', B: 'rotateY(180deg)',
+};
+
+/** CSS's y axis points down: U is rotateX(+90), D rotateX(-90). Each
+ * plane's local rows/columns therefore map exactly to STICKER_POSITIONS.
+ * This view uses the same facelets, rather than a decorative cube image. */
+function CssCubeFallback(props: CubeSceneProps) {
+  const stageRef = useRef<HTMLDivElement>(null);
+  const gestureRef = useRef<{ id: number; x: number; y: number; lastX: number; lastY: number; face?: CubeFace; viewing: boolean } | null>(null);
+  const [size, setSize] = useState(160);
+  const [angle, setAngle] = useState({ x: -25, y: -34 });
+  const [dragging, setDragging] = useState(false);
+  const interactive = !!props.onMove || !!props.onSelectFace;
+
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+    const measure = () => setSize(Math.max(64, Math.min(stage.clientWidth, stage.clientHeight) * 0.54));
+    const observer = new ResizeObserver(measure);
+    observer.observe(stage);
+    measure();
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => { setAngle({ x: -25, y: -34 }); }, [props.resetViewKey]);
+
+  const cancel = () => { gestureRef.current = null; setDragging(false); };
+  const down = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (props.disabled || !event.isPrimary || event.button !== 0 || gestureRef.current || (!interactive && !props.viewMode)) return;
+    const target = event.target as HTMLElement;
+    const face = target.closest<HTMLElement>('[data-css-cube-face]')?.dataset.cssCubeFace as CubeFace | undefined;
+    if (!props.viewMode && !face) return;
+    gestureRef.current = { id: event.pointerId, x: event.clientX, y: event.clientY, lastX: event.clientX, lastY: event.clientY, face, viewing: !!props.viewMode };
+    try { event.currentTarget.setPointerCapture(event.pointerId); } catch { /* Cancelled pointer. */ }
+    setDragging(true);
+    event.preventDefault();
+  };
+  const drag = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const gesture = gestureRef.current;
+    if (!gesture || gesture.id !== event.pointerId) return;
+    if (gesture.viewing) {
+      const dx = event.clientX - gesture.lastX;
+      const dy = event.clientY - gesture.lastY;
+      setAngle(current => ({ x: Math.max(-175, Math.min(175, current.x - dy * 0.45)), y: current.y + dx * 0.45 }));
+    }
+    gesture.lastX = event.clientX;
+    gesture.lastY = event.clientY;
+    event.preventDefault();
+  };
+  const up = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const gesture = gestureRef.current;
+    if (!gesture || gesture.id !== event.pointerId) return;
+    cancel();
+    try { if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); } catch { /* Already released. */ }
+    if (gesture.viewing || !gesture.face || props.disabled) return;
+    props.onSelectFace?.(gesture.face);
+    const move = swipeMove(gesture.face, event.clientX - gesture.x, event.clientY - gesture.y);
+    if (move) props.onMove?.(move);
+  };
+
+  return <div ref={stageRef} className={`css-cube-stage${dragging ? ' is-dragging' : ''}`}
+    data-renderer="css3d" style={{ '--cube-size': `${size}px`, '--cube-half': `${size / 2}px`,
+      perspective: `${size * 6}px`, touchAction: interactive || props.viewMode ? 'none' : 'pan-y',
+      cursor: props.disabled ? 'default' : props.viewMode ? dragging ? 'grabbing' : 'grab' : interactive ? 'pointer' : 'default',
+    } as CSSProperties}
+    onPointerDown={down} onPointerMove={drag} onPointerUp={up} onPointerCancel={cancel} onLostPointerCapture={cancel}>
+    <div className="css-cube-shadow" aria-hidden="true" />
+    <div className="css-cube-model" style={{ transform: `translate(-50%, -50%) rotateX(${angle.x}deg) rotateY(${angle.y}deg)` }}>
+      {FACE_ORDER.map((face, faceIndex) => {
+        const normal = FACE_NORMALS[face];
+        const pitch = angle.x * Math.PI / 180, yaw = angle.y * Math.PI / 180;
+        const towardCamera = -normal[1] * Math.sin(pitch) + (-normal[0] * Math.sin(yaw) + normal[2] * Math.cos(yaw)) * Math.cos(pitch);
+        return <div key={face} className="css-cube-face" data-css-cube-face={face}
+          role={interactive ? 'button' : undefined} aria-label={interactive ? `Selectează fața ${FACE_NAMES[face]}` : undefined}
+          aria-disabled={interactive ? !!props.disabled : undefined}
+          tabIndex={interactive && !props.disabled && !props.viewMode && towardCamera > 0.05 ? 0 : -1}
+          style={{ transform: `${CSS_FACE_ROTATIONS[face]} translateZ(var(--cube-half))` }}
+          onKeyDown={event => {
+            if (props.disabled || props.viewMode) return;
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); props.onSelectFace?.(face); }
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+              event.preventDefault(); props.onSelectFace?.(face); props.onMove?.(event.key === 'ArrowRight' ? face : `${face}'`);
+            }
+          }}>
+          {Array.from({ length: 9 }, (_, offset) => {
+            const index = faceIndex * 9 + offset;
+            const letter = props.state[index] as CubeFace;
+            const highlighted = props.highlight?.includes(index);
+            const selected = offset === 4 && props.selectedFace === face;
+            return <span key={index} className={`css-cube-cell${highlighted ? ' is-highlighted' : ''}${selected ? ' is-selected' : ''}`}
+              data-sticker-index={index} data-sticker-color={letter}
+              style={{ '--sticker-color': FACE_COLORS[letter] || '#f7fafc' } as CSSProperties}>
+              <span className="css-cube-sticker" />
+            </span>;
+          })}
+        </div>;
+      })}
+    </div>
+    {interactive && !props.compact && <p className="css-cube-status">
+      {props.viewMode ? 'Trage ca să privești cubul din jur.' : 'Vedere simplă · mișcările se afișează imediat.'}
+    </p>}
+  </div>;
+}
 
 function roundedSticker(size: number, radius: number) {
   const shape = new THREE.Shape();
@@ -355,22 +461,7 @@ export function CubeScene(props: CubeSceneProps) {
       <div aria-hidden="true" style={{ position: 'absolute', left: '23%', right: '23%', bottom: '6%', height: '6%', borderRadius: '50%', background: '#1b345c', opacity: 0.12, filter: 'blur(13px)', zIndex: -1 }} />
       <div ref={mountRef} style={{ width: '100%', height: '100%', display: unavailable ? 'none' : undefined,
         cursor: props.disabled || turning ? 'wait' : props.viewMode ? 'grab' : interactive ? 'pointer' : 'default' }} />
-      {unavailable && <div className="cube-fallback" style={{ padding: '12px', overflow: 'auto', height: '100%' }}>
-        <p style={{ margin: '0 0 8px', fontSize: '0.875rem' }}>Vedere 2D — folosește butoanele pentru a roti fețele.</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, maxWidth: 400, margin: 'auto' }}>
-          {FACE_ORDER.map(face => <button type="button" key={face} onClick={() => props.onSelectFace?.(face)}
-            disabled={props.disabled} aria-label={`Selectează fața ${FACE_NAMES[face]}`}
-            style={{ background: 'transparent', border: props.selectedFace === face ? '2px solid #337fef' : '2px solid transparent', borderRadius: 12, padding: 4 }}>
-            <span style={{ display: 'block', color: '#172e45', marginBottom: 4 }}>{face} · {FACE_NAMES[face]}</span>
-            <span style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 3, background: '#183048', borderRadius: 6, padding: 3 }}>
-              {Array.from({ length: 9 }, (_, index) => {
-                const letter = props.state[FACE_ORDER.indexOf(face) * 9 + index] as CubeFace;
-                return <span key={index} aria-label={letter} style={{ aspectRatio: '1', borderRadius: 3, background: FACE_COLORS[letter] || '#fff', outline: props.highlight?.includes(FACE_ORDER.indexOf(face) * 9 + index) ? '2px solid #fff7b0' : undefined }} />;
-              })}
-            </span>
-          </button>)}
-        </div>
-      </div>}
+      {unavailable && <CssCubeFallback {...props} />}
       {interactive && !props.compact && !unavailable && <div className="cube-gesture-hint" aria-live="polite"
         style={{ position: 'absolute', left: 10, right: 10, bottom: 0, textAlign: 'center', fontSize: 12, color: '#62748a', pointerEvents: 'none' }}>
         {turning ? 'Rotim fața…' : props.viewMode ? 'Trage ca să privești cubul din jur.' : 'Atinge o față · glisează → pentru ↻, ← pentru ↺'}
