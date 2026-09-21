@@ -2,6 +2,12 @@
 
 Actual captures from the public production app. Phone/tablet sizes are CSS iframe viewports in Chrome, not real Apple/Android devices. This browser disables WebGL, so the screenshots show the interactive CSS3D fallback. Test progress shown belongs only to this verification browser.
 
+## Updated cube contrast
+
+Saturated colours and pure white stickers, verified on the public app. Earlier captures below document the original launch.
+
+![Updated cube contrast](screenshots/cube-contrast.jpg)
+
 ## Home — desktop
 
 ![Home — desktop](screenshots/home-desktop.jpg)

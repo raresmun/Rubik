@@ -29,6 +29,10 @@ Public URL: **https://rubik-taupe.vercel.app/**. The user imported the repositor
 - Actual JSON backup downloads were found in the browser's synchronized download directory, parsed successfully, and imported through the native file chooser. Import required confirmation and restored the completed lesson and progress. The browser's download-event observer timed out even though files downloaded; file existence/content and successful import provided the evidence instead.
 - Desktop and CSS viewports of 390×844, 768×1024 and 1024×768 were visually reviewed. Refinements improved the no-WebGL cube, mobile caption clearance, landscape control reach and native Safari-friendly download interaction. See [screenshots](SCREENSHOTS.md).
 
+## Cube contrast refinement
+
+The shared cube/control palette now uses saturated colours and pure white (`#ffffff`). WebGL sticker materials bypass lighting and filmic colour changes; lighting remains on the rounded plastic. The CSS3D view keeps white sticker surfaces pure white and uses cyan lesson outlines. The production CSS3D browser check reported `rgb(255, 255, 255)` for all nine white stickers. The public HTML matched the rebuilt application. See the updated contrast screenshot.
+
 ## Browser and device limits
 
 These are **Chrome cloud-browser checks and CSS viewport simulation**, not actual Android, iPhone or iPad tests. The test browser disables WebGL. Screenshots therefore show the precise interactive **CSS3D fallback**; its moves update immediately. The primary Three.js renderer's face transformations are covered by geometry tests, but its actual GPU appearance and layer animations were not visually tested here. Expected WebGL-context failures and browser-extension logging were observed; no other app runtime failure was found in the exercised flows.
