@@ -119,7 +119,7 @@ function CssCubeFallback(props: CubeSceneProps) {
             const selected = offset === 4 && props.selectedFace === face;
             return <span key={index} className={`css-cube-cell${highlighted ? ' is-highlighted' : ''}${selected ? ' is-selected' : ''}`}
               data-sticker-index={index} data-sticker-color={letter}
-              style={{ '--sticker-color': FACE_COLORS[letter] || '#f7fafc' } as CSSProperties}>
+              style={{ '--sticker-color': FACE_COLORS[letter] || '#ffffff' } as CSSProperties}>
               <span className="css-cube-sticker" />
             </span>;
           })}
@@ -198,17 +198,19 @@ export function CubeScene(props: CubeSceneProps) {
     const stickerGeometry = roundedSticker(0.766, 0.106);
     const outlineGeometry = roundedSticker(0.872, 0.14);
     const bodyMaterial = new THREE.MeshPhysicalMaterial({
-      color: '#152a3e', roughness: 0.36, metalness: 0.06,
+      color: '#0c1724', roughness: 0.36, metalness: 0.06,
       clearcoat: 0.22, clearcoatRoughness: 0.36,
     });
     const stickerMaterials = FACE_ORDER.reduce((acc, face) => {
-      acc[face] = new THREE.MeshStandardMaterial({
-        color: FACE_COLORS[face], roughness: 0.37, metalness: 0.015,
+      // Keep teaching colours exact, including pure white. Lighting and filmic
+      // tone mapping belong to the rounded plastic, not the colour stickers.
+      acc[face] = new THREE.MeshBasicMaterial({
+        color: FACE_COLORS[face], toneMapped: false,
       });
       return acc;
-    }, {} as Record<CubeFace, THREE.MeshStandardMaterial>);
-    const highlightMaterial = new THREE.MeshBasicMaterial({ color: '#fff5aa' });
-    const selectedMaterial = new THREE.MeshBasicMaterial({ color: '#a9cafc' });
+    }, {} as Record<CubeFace, THREE.MeshBasicMaterial>);
+    const highlightMaterial = new THREE.MeshBasicMaterial({ color: '#60dfff', toneMapped: false });
+    const selectedMaterial = new THREE.MeshBasicMaterial({ color: '#a9cafc', toneMapped: false });
     const cubies: THREE.Group[] = [];
     const stickerMeshes: THREE.Mesh[] = [];
     const outlineMeshes: THREE.Mesh[] = [];

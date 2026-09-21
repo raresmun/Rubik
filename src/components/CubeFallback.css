@@ -28,8 +28,8 @@
   grid-template-rows: repeat(3, minmax(0, 1fr));
   padding: 1.4%;
   border-radius: 5%;
-  background: #172d43;
-  box-shadow: inset 0 0 0 1px #5c6c7b, 0 0 0 0.35px #14273a;
+  background: #07121e;
+  box-shadow: inset 0 0 0 1px #304457, 0 0 0 0.35px #07121e;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -40,24 +40,27 @@
   min-height: 0;
   padding: 4.5%;
   border-radius: 16%;
-  background: linear-gradient(145deg, #34495d, #15293e 75%);
+  background: linear-gradient(145deg, #223348, #07121e 75%);
 }
 .css-cube-sticker {
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 13%;
-  background: linear-gradient(145deg, #ffffff28, #ffffff00 54%, #0000000a), var(--sticker-color);
+  background: linear-gradient(145deg, #ffffff0c, #ffffff00 54%, #00000008), var(--sticker-color);
   box-shadow: inset 0 1.4px 0 #ffffff60, inset 0 -1.3px 0 #00000017, 0 1px 1.4px #00000045;
 }
 .css-cube-face[data-css-cube-face="U"] .css-cube-sticker {
-  background: linear-gradient(145deg, #ffffff36, #ffffff08 75%), var(--sticker-color);
+  background: linear-gradient(145deg, #ffffff10, #ffffff00 75%), var(--sticker-color);
 }
 .css-cube-face[data-css-cube-face="R"] .css-cube-sticker {
-  background: linear-gradient(145deg, #ffffff12, #00000010), var(--sticker-color);
+  background: linear-gradient(145deg, #ffffff00, #00000008), var(--sticker-color);
+}
+.css-cube-cell[data-sticker-color="D"] .css-cube-sticker {
+  background: #ffffff;
 }
 .css-cube-cell.is-highlighted .css-cube-sticker {
-  box-shadow: 0 0 0 2px #fff6a9, inset 0 1.4px 0 #ffffff70, inset 0 -1.3px 0 #00000017;
+  box-shadow: 0 0 0 2px #60dfff, inset 0 1.4px 0 #ffffff70, inset 0 -1.3px 0 #00000017;
 }
 .css-cube-cell.is-selected:not(.is-highlighted) .css-cube-sticker {
   box-shadow: 0 0 0 2px #b8d7ff, inset 0 1.4px 0 #ffffff70, inset 0 -1.3px 0 #00000017;

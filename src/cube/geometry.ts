@@ -11,8 +11,8 @@ export const FACE_NORMALS: Record<CubeFace, Vec3> = {
 };
 
 export const FACE_COLORS: Record<CubeFace, string> = {
-  U: '#ffd342', R: '#ed4e43', F: '#20b877',
-  D: '#f7fafc', L: '#ff923c', B: '#337fef',
+  U: '#ffd500', R: '#d71920', F: '#009b48',
+  D: '#ffffff', L: '#ff6d00', B: '#0057d9',
 };
 
 export const FACE_NAMES: Record<CubeFace, string> = {
