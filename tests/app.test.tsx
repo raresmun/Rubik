@@ -10,6 +10,8 @@ const doubles = vi.hoisted(() => ({
   speak: vi.fn<(text: string, key?: string, slow?: boolean) => Promise<string>>(async () => 'ended'),
   stop: vi.fn(),
   solve: vi.fn<(state: string) => Promise<string[]>>(),
+  blobCount: 0,
+  blobs: new Map<string, Blob>(),
 }));
 
 // The 3D renderer has geometry tests; these tests exercise React state, buttons,
@@ -46,7 +48,7 @@ vi.mock('../src/lib/storage', async importOriginal => {
 import App from '../src/App';
 import { applyMoves, FACE_NAMES, inverse, SOLVED, type Face } from '../src/cube/engine';
 import { getLesson, guidedLesson, lessonCheckpoint, lessonStagePrefix } from '../src/content/lessons';
-import { defaultData, serializeBackup } from '../src/lib/storage';
+import { defaultData, parseBackup, serializeBackup } from '../src/lib/storage';
 
 beforeEach(() => {
   window.history.replaceState(null, '', '/');
@@ -55,9 +57,19 @@ beforeEach(() => {
   doubles.speak.mockClear();
   doubles.stop.mockClear();
   doubles.solve.mockReset();
+  doubles.blobCount = 0;
+  doubles.blobs.clear();
+  vi.stubGlobal('URL', class extends window.URL {
+    static createObjectURL = vi.fn((blob: Blob) => {
+      const href = `blob:backup-${++doubles.blobCount}`;
+      doubles.blobs.set(href, blob);
+      return href;
+    });
+    static revokeObjectURL = vi.fn((href: string) => { doubles.blobs.delete(href); });
+  });
   vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
 });
-afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 async function boot() {
   const rendered = render(<App />);
@@ -428,20 +440,48 @@ describe('learning, solving, and parent workflows', () => {
   it('protects backup controls with a parent gate and rejects malformed imports without changing progress', async () => {
     await boot();
     fireEvent.click(screen.getByRole('button', { name: 'Pentru părinți' }));
-    expect(screen.queryByRole('button', { name: 'Exportă progresul' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Exportă progresul' })).not.toBeInTheDocument();
     fireEvent.change(screen.getByRole('textbox', { name: 'Răspuns pentru părinți' }), { target: { value: '12' } });
     fireEvent.click(screen.getByRole('button', { name: 'Deschide copiile de siguranță' }));
     expect(screen.getByRole('status')).toHaveTextContent('Mai verifică răspunsul.');
     expect(document.querySelector('input[type=file]')).toBeNull();
     fireEvent.change(screen.getByRole('textbox', { name: 'Răspuns pentru părinți' }), { target: { value: '13' } });
     fireEvent.click(screen.getByRole('button', { name: 'Deschide copiile de siguranță' }));
-    expect(screen.getByRole('button', { name: 'Exportă progresul' })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: 'Exportă progresul' })).toBeInTheDocument();
     await savedWhen(data => expect(data.lastScreen).toBe('parents'));
     const before = structuredClone(doubles.saved);
     uploadJson('{"app":"unrelated-app","version":1}');
     await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('Fișierul nu este valid.'));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(doubles.saved).toEqual(before);
+  });
+
+  it('prepares a native backup download with current data and releases replaced object URLs', async () => {
+    const rendered = await boot();
+    expect(doubles.blobs.size).toBe(0);
+    await unlockBackups();
+    const link = await screen.findByRole('link', { name: 'Exportă progresul' });
+    expect(link.tagName).toBe('A');
+    expect(link).toHaveAttribute('download', expect.stringMatching(/^cubul-lui-erik-\d{4}-\d{2}-\d{2}\.json$/));
+    const initialHref = link.getAttribute('href')!;
+    expect(initialHref).toMatch(/^blob:/);
+    const readBlob = (blob: Blob) => new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result));
+      reader.onerror = () => reject(reader.error);
+      reader.readAsText(blob);
+    });
+    expect(parseBackup(await readBlob(doubles.blobs.get(initialHref)!)).preferences.muted).toBe(false);
+    fireEvent.click(screen.getByRole('button', { name: 'Sunet pornit' }));
+    await waitFor(() => expect(link.getAttribute('href')).not.toBe(initialHref));
+    const refreshedHref = link.getAttribute('href')!;
+    const exported = parseBackup(await readBlob(doubles.blobs.get(refreshedHref)!));
+    expect(exported.preferences.muted).toBe(true);
+    expect(exported).toEqual(doubles.saved);
+    expect(URL.revokeObjectURL).toHaveBeenCalledWith(initialHref);
+    rendered.unmount();
+    expect(URL.revokeObjectURL).toHaveBeenCalledWith(refreshedHref);
+    expect(doubles.blobs.size).toBe(0);
   });
 
   it('restores a valid backup only after explicit replacement confirmation', async () => {

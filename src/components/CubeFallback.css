@@ -90,3 +90,8 @@
 @media (prefers-reduced-motion: reduce) {
   .css-cube-model { transition: none; }
 }
+
+@media (max-width: 700px) {
+  .hero-stage .css-cube-model { top: 41%; }
+  .hero-stage .css-cube-shadow { top: calc(41% + var(--cube-size) * .72); }
+}
